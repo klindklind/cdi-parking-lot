@@ -14,16 +14,16 @@ public class CarProducer {
 
     @Inject
     @Any
-    private Instance<IDriver> drivers;
+    private Instance<ILicensePlate> licensePlates;
 
     @Produces
-    public List<Car> buildCarsForDrivers() {
+    public List<Car> buildCarForEveryLicensePlate() {
         List<Car> cars = new ArrayList<Car>();
-        Iterator<IDriver> driverIterator = drivers.iterator();
-        IDriver driver;
-        while (driverIterator.hasNext()) {
-            driver = driverIterator.next();
-            cars.add(new Car(driver, getEngineRoomBean()));
+        Iterator<ILicensePlate> licensePlateIterator = licensePlates.iterator();
+        ILicensePlate licensePlate;
+        while (licensePlateIterator.hasNext()) {
+            licensePlate = licensePlateIterator.next();
+            cars.add(new Car(licensePlate, getEngineRoomBean()));
         }
         return cars;
     }

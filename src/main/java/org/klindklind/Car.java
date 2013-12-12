@@ -2,16 +2,16 @@ package org.klindklind;
 
 public class Car {
 
-    private IDriver driver;
+    private ILicensePlate driver;
 
     private EngineRoom engineRoom;
 
-    public Car(IDriver driver, EngineRoom engineRoom) {
+    public Car(ILicensePlate driver, EngineRoom engineRoom) {
         this.driver = driver;
         this.engineRoom = engineRoom;
     }
 
-    public IDriver getDriver() {
+    public ILicensePlate getDriver() {
         return driver;
     }
 
